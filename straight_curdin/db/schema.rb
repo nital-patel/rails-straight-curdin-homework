@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171004154307) do
+ActiveRecord::Schema.define(version: 20171006012932) do
 
   create_table "cheeses", force: :cascade do |t|
     t.string "name"
     t.string "milk_type"
     t.string "description"
     t.string "image_url"
+    t.integer "stank_level", default: 0
+    t.integer "country_id"
+    t.index ["country_id"], name: "index_cheeses_on_country_id"
+  end
+
+  create_table "countries", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

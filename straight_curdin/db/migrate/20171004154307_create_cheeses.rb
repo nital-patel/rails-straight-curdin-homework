@@ -5,6 +5,7 @@ class CreateCheeses < ActiveRecord::Migration[5.1]
       t.string :milk_type
       t.string :description
       t.string :image_url
+      t.timestamps
     end
   end
 end
